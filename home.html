@@ -6,59 +6,107 @@
     <title>EY-Music</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-
-
   <body>
+    <header>
+      <h1 id="title">EY-Music</h1>
+      <input type="checkbox" id="menu-toggle" />
+      <label class="hamburger-container" for="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div class="menu">
+        <a id="menu-home" href="home.html">Home</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="news.html">News</a>
+        <a href="charts.html">Charts</a>
+      </div>
 
-
-<header>
-<h1 id="title">EY-Music</h1>
-
-  <input type="checkbox" id="menu-toggle" />
-  <label class="hamburger-container" for="menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
-  <div class="menu">
-    <a href="home.html">Home</a>
-    <a href="reviews.html">Reviews</a>
-    <a href="news.html">News</a>
-    <a href="charts.html">Charts</a>
-  </div>
-
-  <img src="Logo.png" alt="Logo">
-</header>
-
+      <img src="Logo.png" alt="Logo" />
+    </header>
 
     <main>
-      <section id="home" class="page">
-        <h2>Home</h2>
-<div id="categories">
-        <h3 id="newSongs">New Songs</h3>
-
-        <h3 id="newAlbums">New Albums</h3>
-</div>
-
+      <section id="home">
+        <div id="homebild-container">
+          <h2 id="overlay-home">Home</h2>
+        </div>
       </section>
 
+      <section class="music-section">
+        <table class="new-songs">
+          <thead>
+            <tr>
+              <th>New Songs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1. Lil Wayne - Man of the Year</td>
+            </tr>
+            <tr>
+              <td>2. Lorde - Hammer</td>
+            </tr>
+            <tr>
+              <td>3. Addison Rae - Imaginary Friend</td>
+            </tr>
+            <tr>
+              <td>4. Doja Cat - Jealous Type</td>
+            </tr>
+            <tr>
+              <td>5. Ed Sheeran - Azizam</td>
+            </tr>
+          </tbody>
+        </table>
 
+        <table class="new-albums">
+          <thead>
+            <tr>
+              <th>New Albums</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1. Lil Wayne - Tha Carter VI</td>
+            </tr>
+            <tr>
+              <td>2. Lorde - Virgin</td>
+            </tr>
+            <tr>
+              <td>3. Doja Cat - Vie</td>
+            </tr>
+            <tr>
+              <td>4. Lil Tecca - Dopamine</td>
+            </tr>
+            <tr>
+              <td>5. Olivia Rodrigo - Echoes</td>
+            </tr>
+          </tbody>
+        </table>
 
-
-
-      <section id="reviews" class="page">
-        <h2>Reviews</h2>
-        <p>Hier findest du Musikbewertungen.</p>
-      </section>
-
-      <section id="news" class="page">
-        <h2>News</h2>
-        <p>Aktuelle Musik-News und Trends.</p>
-      </section>
-
-      <section id="charts" class="page">
-        <h2>Charts</h2>
-        <p>Top 5 Songs und Alben.</p>
+        <table class="top5">
+          <thead>
+            <tr>
+              <th>Top 5 Songs from Yves</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1. It Ain't Hard to Tell - Nas</td>
+            </tr>
+            <tr>
+              <td>2. C.R.E.A.M. - Wu-Tang Clan</td>
+            </tr>
+            <tr>
+              <td>3. Big Tipper - Young Thug</td>
+            </tr>
+            <tr>
+              <td>4. Real Brothas - B.G. Knocc Out, Dresta</td>
+            </tr>
+            <tr>
+              <td>5. 93' Till Infinity - Souls Of Mischief</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
   </body>

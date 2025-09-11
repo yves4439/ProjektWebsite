@@ -1,25 +1,34 @@
-body{
-    font-family: Arial Black, Helvetica, sans-serif;
+body {
+  background-color: black;
+  font-family: Arial Black, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
 }
 
-html{
+html {
   scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 header {
   position: relative;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   background-color: black;
   height: 100px;
+  z-index: 10;
 }
 
-#title{
-   color : white;
-   margin: 0;
-   left: 50%;
-   font-size: 90px;
+#title {
+  color: white;
+  margin: 0;
+  font-size: 90px;
 }
 
 header img {
@@ -27,41 +36,33 @@ header img {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  margin-top: 9px;
   width: 120px;
 }
 
-
-#home{
-    text-align: center;
-    display: block;
-   h2{
-    font-size: 50px;
-   }
-
-
-   #categories{
-      display: flex;                 /* nebeneinander */
-  justify-content: space-around; /* Abstand zwischen beiden */
-  align-items: flex-start;       /* oben ausrichten */
-  margin-top: 20px;
-  font-size: 30px;
+#home {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("Homebild.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-size: 50px;
+  text-align: center;
 }
-}
-
-
-
 
 .hamburger-container {
   position: absolute;
   left: 5px;
-  top: 8px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 40px;
   height: 30px;
   cursor: pointer;
-  margin: 40px;
-  align-items: start;
-  transform: translateY(-50%);
+  z-index: 11;
 }
 
 .hamburger-container span {
@@ -89,31 +90,199 @@ header img {
   background-color: #eee;
   border-radius: 5px;
   padding: 10px;
-  width: 30%;
+  width: 27%;
   font-size: 60px;
+  z-index: 12;
+  text-align: left;
 }
 
 .menu a {
   display: block;
-  text-decoration: none;
-  color: black;
   padding: 8px 0;
+  text-align: left;
+}
+
+.menu a#menu-home {
+  text-align: left;
 }
 
 .menu a:hover {
   background-color: #ddd;
   border-radius: 3px;
+  text-align: left;
 }
 
 #menu-toggle:checked ~ .menu {
   display: block;
 }
 
-a{
-    margin-bottom: 20px;
+#home {
+  text-align: center;
+  display: block;
+}
+
+#homebild-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 5px 0;
+  background-image: url("Homebild.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+#overlay-home {
+  color: white;
+  font-size: 50px;
+  z-index: 2;
+}
+
+#categories {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+  font-size: 30px;
 }
 
 .page {
-  min-height: 100vh; 
+  min-height: 100vh;
   padding: 50px;
 }
+
+.music-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.music-section th {
+  font-size: 30px;
+}
+
+.music-section td {
+  font-size: 20px;
+}
+
+.music-section table {
+  border-collapse: separate;
+  border-spacing: 0 20px;
+}
+
+.music-section td,
+.music-section th {
+  padding: 10px;
+}
+
+.music-section tbody tr:nth-child(1) {
+  background-color: goldenrod;
+}
+
+.music-section tbody tr:nth-child(2) {
+  background-color: silver;
+}
+
+.music-section tbody tr:nth-child(3) {
+  background-color: #bf8970;
+}
+
+.new-albums {
+  margin: 0 auto;
+}
+
+.top5 {
+  margin-left: auto;
+}
+
+#search-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px 20px;
+  background-color: black;
+}
+
+#search-section input {
+  width: 600px;
+  padding: 20px 15px;
+  font-size: 24px;
+  border: 2px solid white;
+  border-radius: 12px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+}
+
+#results {
+  margin-top: 20px;
+  width: 600px;
+}
+
+.vote-stars span {
+  font-size: 30px;
+  cursor: pointer;
+  color: gold;
+  margin-right: 5px;
+  transition: transform 0.2s;
+}
+
+.vote-stars span:hover,
+.vote-stars span:hover ~ span {
+  transform: scale(1.2);
+}
+
+.average-stars {
+  font-size: 24px;
+  color: gold;
+}
+
+
+.news-section{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 50px;
+  
+
+}
+
+.news-section th {
+  font-size: 40px;
+}
+
+.news-section td {
+  font-size: 30px;
+}
+
+
+
+.news-section table {
+  border-collapse: separate;
+  border-spacing: 0 20px;
+}
+
+.news-section td,
+.news-section th {
+  padding: 10px;
+}
+
+.nextConcerts td a {
+  color: white;
+  text-decoration: underline;
+}
+
+.Interviews td a{
+  color: white;
+  text-decoration: underline;
+}
+
+
