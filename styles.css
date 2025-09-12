@@ -1,9 +1,10 @@
 body {
-  background-color: black;
-  font-family: Arial Black, Helvetica, sans-serif;
+  background-color: #111;
+  color: #fff;
+  font-family: "Arial", "Helvetica", sans-serif;
   margin: 0;
   padding: 0;
-  color: white;
+  overflow-x: hidden;
 }
 
 html {
@@ -20,15 +21,18 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: #181818;
   height: 100px;
   z-index: 10;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 #title {
   color: white;
   margin: 0;
-  font-size: 90px;
+  font-size: 60px;
+  font-family: "IAmMusic", Arial, Helvetica, sans-serif;
 }
 
 header img {
@@ -36,12 +40,12 @@ header img {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 120px;
+  width: 100px;
 }
 
 #home {
   width: 100%;
-  height: 100px;
+  height: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +54,7 @@ header img {
   background-position: center;
   background-repeat: no-repeat;
   color: white;
-  font-size: 50px;
+  font-size: 80px;
   text-align: center;
 }
 
@@ -87,37 +91,31 @@ header img {
   position: absolute;
   top: 100px;
   left: 0;
-  background-color: #eee;
-  border-radius: 5px;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 10px;
-  width: 27%;
-  font-size: 60px;
+  width: 22%;
+  font-size: 28px;
   z-index: 12;
   text-align: left;
 }
 
 .menu a {
   display: block;
-  padding: 8px 0;
+  padding: 12px 0;
   text-align: left;
-}
-
-.menu a#menu-home {
-  text-align: left;
+  color: #fff;
+  border-radius: 8px;
+  transition: background 0.2s;
 }
 
 .menu a:hover {
-  background-color: #ddd;
-  border-radius: 3px;
-  text-align: left;
+  background: #333;
+  border-radius: 8px;
 }
 
 #menu-toggle:checked ~ .menu {
-  display: block;
-}
-
-#home {
-  text-align: center;
   display: block;
 }
 
@@ -133,12 +131,17 @@ header img {
   display: flex;
   justify-content: center;
   z-index: 1;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 #overlay-home {
   color: white;
-  font-size: 50px;
+  font-size: 40px;
   z-index: 2;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 #categories {
@@ -149,46 +152,53 @@ header img {
   font-size: 30px;
 }
 
-.page {
+.page, main {
   min-height: 100vh;
-  padding: 50px;
 }
 
 .music-section {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 20px;
   width: 100%;
   margin-top: 50px;
 }
 
+.music-section table {
+  flex: 1 1 300px;
+  min-width: 300px;
+  max-width: 32%;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0 20px;
+  border-radius: 15px;
+  background: #181818;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
 .music-section th {
-  font-size: 30px;
+  font-size: 36px;
+  color: #ffd700;
+  padding: 10px;
 }
 
 .music-section td {
-  font-size: 20px;
-}
-
-.music-section table {
-  border-collapse: separate;
-  border-spacing: 0 20px;
-}
-
-.music-section td,
-.music-section th {
+  font-size: 24px;
+  color: #fff;
   padding: 10px;
 }
 
 .music-section tbody tr:nth-child(1) {
-  background-color: goldenrod;
+  color: goldenrod;
 }
 
 .music-section tbody tr:nth-child(2) {
-  background-color: silver;
+  color: silver;
 }
 
 .music-section tbody tr:nth-child(3) {
-  background-color: #bf8970;
+  color: #bf8970;
 }
 
 .new-albums {
@@ -203,18 +213,21 @@ header img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 20px 20px;
-  background-color: black;
+  padding: 100px 20px 20px;
+  background: #181818;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-top: 40px;
 }
 
 #search-section input {
-  width: 600px;
+  width: 400px;
   padding: 20px 15px;
-  font-size: 24px;
-  border: 2px solid white;
+  font-size: 20px;
+  border: 2px solid #ffd700;
   border-radius: 12px;
-  background-color: black;
-  color: white;
+  background: #222;
+  color: #fff;
   text-align: center;
   margin-bottom: 20px;
   position: sticky;
@@ -245,44 +258,246 @@ header img {
   color: gold;
 }
 
-
-.news-section{
+.news-section {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 30px;
   width: 100%;
   margin-top: 50px;
-  
-
 }
-
-.news-section th {
-  font-size: 40px;
-}
-
-.news-section td {
-  font-size: 30px;
-}
-
-
 
 .news-section table {
   border-collapse: separate;
   border-spacing: 0 20px;
+  border-radius: 15px;
+  background: #181818;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
 }
 
-.news-section td,
 .news-section th {
+  font-size: 28px;
+  color: #ffd700;
   padding: 10px;
 }
 
-.nextConcerts td a {
+.news-section td {
+  font-size: 18px;
+  color: #fff;
+  padding: 10px;
+}
+
+.nextConcerts td a,
+.Interviews td a {
   color: white;
   text-decoration: underline;
 }
 
-.Interviews td a{
+.charts-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 70px;
+  gap: 20px;
+}
+
+.charts {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.charts table {
+  width: 500px;
+  max-width: 50%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  border-radius: 15px;
+  background: #181818;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.charts th {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: left;
+  padding-bottom: 8px;
+  color: #ffd700;
+  margin-top: 0;
+  padding: 10px;
+}
+
+.charts td {
+  padding: 10px;
   color: white;
+  font-size: 22px;
+  text-align: left;
+  margin-top: 0;
+  border-radius: 5px;
+}
+
+.switzerland th,
+.switzerland td {
+  text-align: left;
+  word-wrap: break-word;
+  max-width: 300px;
+}
+
+footer {
+  position: relative;
+  background-color: #181818;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  border-top: 1px solid #333;
+  border-radius: 0 0 15px 15px;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #ffd700;
   text-decoration: underline;
 }
 
+@font-face {
+  font-family: "IAmMusic";
+  src: url(IAmMusic-Regular.ttf-_4_.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
 
+@media (max-width: 1100px) {
+  .music-section table {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  .music-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .charts {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+  }
+  .charts table {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .music-section {
+    flex-direction: column;
+  }
+  .music-section table {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .news-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .news-section table {
+    width: 100%;
+    max-width: 600px;
+  }
+  .switzerland th,
+  .switzerland td {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    height: 70px;
+    font-size: 16px;
+  }
+  #title {
+    font-size: 32px;
+  }
+  #home {
+    font-size: 36px;
+    height: 80px;
+    padding: 10px 0;
+  }
+  .music-section {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 5px;
+  }
+  .music-section table {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  .music-section th {
+    font-size: 18px;
+  }
+  .music-section td {
+    font-size: 14px;
+  }
+  .charts {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+  .charts table {
+    width: 100%;
+    max-width: 100%;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .charts th {
+    font-size: 18px;
+  }
+  .charts td {
+    font-size: 14px;
+  }
+  .news-section {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 5px;
+  }
+  .news-section table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  .news-section th {
+    font-size: 16px;
+  }
+  .news-section td {
+    font-size: 12px;
+  }
+  #search-section {
+    padding: 40px 5px 10px;
+  }
+  #search-section input {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 8px;
+  }
+  #results {
+    width: 100%;
+  }
+  footer {
+    font-size: 14px;
+    padding: 10px 2px;
+  }
+}

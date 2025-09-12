@@ -42,12 +42,6 @@ fetch("big_song_list.txt")
     renderSongs(allSongs);
   });
 
-
-
-
-
-
-
 function renderSongs(songs) {
   results.innerHTML = "";
   songs.forEach((songName, index) => {
@@ -80,36 +74,40 @@ searchInput.addEventListener("input", () => {
   renderSongs(filteredSongs);
 });
 
+// Reset all votes and userVotes on page load
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".song").forEach((song) => {
+    const songId = song.dataset.id;
+    localStorage.removeItem("votes_" + songId);
+    localStorage.removeItem("userVote_" + songId);
+  });
+});
+
 function initVoting() {
   document.querySelectorAll(".song").forEach((song) => {
     const stars = song.querySelectorAll(".vote-stars span");
     const avgDisplay = song.querySelector(".average-stars");
     const songId = song.dataset.id;
 
-    let votes = JSON.parse(localStorage.getItem("votes_" + songId)) || [];
-    let userVote =
-      JSON.parse(localStorage.getItem("userVote_" + songId)) || null;
+    let votes = [];
+    let userVote = JSON.parse(localStorage.getItem("userVote_" + songId)) || null;
+    if (userVote !== null) {
+      votes = [userVote];
+    }
 
     updateAverage();
     if (userVote) {
       markStars(userVote);
-      disableHover();
     }
 
     stars.forEach((star) => {
       star.addEventListener("click", () => {
-        if (userVote) return;
-
         userVote = parseInt(star.dataset.value);
-        votes.push(userVote);
-
+        votes = [userVote];
         localStorage.setItem("votes_" + songId, JSON.stringify(votes));
         localStorage.setItem("userVote_" + songId, JSON.stringify(userVote));
-
         markStars(userVote);
-        disableHover();
         updateAverage();
-        
       });
     });
 
@@ -117,10 +115,6 @@ function initVoting() {
       stars.forEach((s) => {
         s.textContent = parseInt(s.dataset.value) <= vote ? "★" : "☆";
       });
-    }
-
-    function disableHover() {
-      stars.forEach((s) => (s.style.cursor = "default"));
     }
 
     function updateAverage() {
